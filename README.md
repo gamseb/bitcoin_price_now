@@ -1,1 +1,2 @@
-# bitcoin_price_now
+# bitcoin price now
+A simple script that returns the current price of bitcoins in US dollars
