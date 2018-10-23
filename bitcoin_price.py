@@ -3,12 +3,10 @@
 #This is a script that returns the price of one Bitcoin in US dollars
 import requests, json
 
-#Gets the api of https://www.bitcoinprice.com
-usd_response = requests.get("https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC&tsyms=USD&e=CCCAGG")
-euro_response = requests.get("https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC&tsyms=EUR&e=CCCAGG")
-#Converts to json
-usd = usd_response.json()
-euro = euro_response.json()
+#Gets the api of https://www.bitcoinprice.com and converts it to json
+usd = requests.get("https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC&tsyms=USD&e=CCCAGG").json()
+euro = requests.get("https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC&tsyms=EUR&e=CCCAGG").json()
+#Gets the bitcoin symbol
 bitcoin_symbol = usd['DISPLAY']['BTC']['USD']['FROMSYMBOL']
 #prints to the console
 print("*" * 36)
